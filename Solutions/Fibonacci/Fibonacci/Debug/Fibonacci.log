@@ -1,0 +1,5 @@
+﻿  Fibonacci.c
+c:\users\cho\desktop\h2au\fibonacci\fibonacci\fibonacci.c(105): warning C4996: '_itoa': This function or variable may be unsafe. Consider using _itoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(637): note: '_itoa' 선언을 참조하십시오.
+  Fibonacci.vcxproj -> C:\Users\cho\Desktop\H2Au\Fibonacci\Debug\Fibonacci.exe
+  Fibonacci.vcxproj -> C:\Users\cho\Desktop\H2Au\Fibonacci\Debug\Fibonacci.pdb (Full PDB)
