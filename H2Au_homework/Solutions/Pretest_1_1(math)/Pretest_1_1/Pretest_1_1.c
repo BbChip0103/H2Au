@@ -68,12 +68,17 @@ void PrintSpiral(int _array_size) {
 	int i;
 
 	radius = _array_size / 2;	// 반지름 계산
-	rotation_count = radius / 3;	// 몇 바퀴 돌릴지, 뒤에 나누는 숫자를 높게 할 수록 간격이 여유로워짐
+	rotation_count = radius / 5;	// 몇 바퀴 돌릴지, 뒤에 나누는 숫자를 높게 할 수록 간격이 여유로워짐
 	angle = 360 * rotation_count;	// 각도 계산
 
 	for (i = 0; i < angle; i++) {
-		MoveXY((int)(COS(i) * radius * i / angle) + (radius - 1),
-			(int)(SIN(i) * radius * i / (angle * VERTICAL_SCALE)) + (radius / VERTICAL_SCALE) + 1);
+		// 반올림 할 경우가 중앙의 디테일이 좀 더 살음 +0.5하고 내림하는식으로 구현
+		MoveXY((int)floor((COS(i) * radius * i / angle) + (radius - 1) + 0.5), 
+				 (int)floor((SIN(i) * radius * i / (angle * VERTICAL_SCALE)) + (radius / VERTICAL_SCALE) + 1.5));
+
+		//MoveXY((int)(COS(i) * radius * i / angle) + (radius - 1),
+		//	(int)(SIN(i) * radius * i / (angle * VERTICAL_SCALE)) + (radius / VERTICAL_SCALE) + 1);
+
 		printf("*");
 	}
 
