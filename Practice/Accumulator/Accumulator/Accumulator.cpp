@@ -1,47 +1,40 @@
 #include <iostream>
 #include <string>
 
+//상속 고려해서 클래스 설계(미래지향 코딩)
 class Accumulator
 {
+private:
+	int num;
 public:
 	Accumulator();
 	Accumulator(char *Expression);
 
-	double Add(double _value1, double _value2);
-	double Subtrack(double _value1, double _value2);
-	double Multiply(double _value1, double _value2);
-	double Divide(double _value1, double _value2);
+	//템플릿 수정해야대
+	double Add(double _value1, double _value2) {
+		double result = _value1 + _value2;
+		return result;
+	}
+	double Subtrack(double _value1, double _value2) {
+		double result = _value1 - _value2;
+		return result;
+	}
+	double Multiply(double _value1, double _value2) {
+		double result = _value1 * _value2;
+		return result;
+	}
+	double Divide(double _value1, double _value2) {
+		double result = _value1 / _value2;
+		return result;
+	}
 
 private:
 
 };
 
-Accumulator::Accumulator(){
-}
-
-Accumulator::Accumulator(char *Expression){
-	std::cout << "생성자 오버로딩.\n";
-}
-
-double Accumulator::Add(double _value1, double _value2) {
-	double result = _value1 + _value2;
-	return result;
-}
-
-double Accumulator::Subtrack(double _value1, double _value2) {
-	double result = _value1 - _value2;
-	return result;
-}
-
-double Accumulator::Multiply(double _value1, double _value2) {
-	double result = _value1 * _value2;
-	return result;
-}
-
-double Accumulator::Divide(double _value1, double _value2) {
-	double result = _value1 / _value2;
-	return result;
-}
+Accumulator::Accumulator():num(0)
+{
+};
 
 void FlushBuffer();
 
