@@ -4,36 +4,26 @@ using UnityEngine;
 
 public class FlyMath : MonoBehaviour {
 
-	int cnt = 0, cnt_limit = 120;
-	int i;
-	float height, speed = 0.01f;
+	public float height, speed;
 
-	Vector3 move_vector = new Vector3 (0.0f, 1f, 0.0f);
-	Vector3 move_vector2 = new Vector3 (-0.7f, 0.0f, 0.0f);
+	private float vertical_start, horizontal_start;
+	private int cnt = 0, cnt_limit = 50;
 
-	// Use this for initialization
 	void Start () {
-		StartCoroutine ("UnityFly");
-		height = cnt_limit / 4;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		cnt_limit = (int)(cnt_limit / speed * 2);
 
+		vertical_start = this.transform.position.y;
+		horizontal_start = this.transform.position.x;
 	}
 
-	IEnumerator UnityFly(){
-
-		transform.position = move_vector * (1 - (Mathf.Cos(Mathf.PI * cnt * 2 / cnt_limit) / 2.0f + 0.5f)) * height * speed + move_vector2 ;
-		if (cnt >= cnt_limit - 2) {
+	void FixedUpdate () {
+		transform.position = Vector3.up * (2 - (Mathf.Cos(2 * Mathf.PI * cnt / (cnt_limit - 1)) + 1)) / 2 * height;
+		transform.position += Vector3.up * vertical_start + Vector3.right * horizontal_start;
+		if (cnt >= cnt_limit - 1) {
 			cnt = 0;
 		}
 		else{
-			cnt+=2;
+			cnt++;
 		}
-
-		yield return new WaitForSeconds(0.01f);
-
-		StartCoroutine ("UnityFly");
 	}
 }

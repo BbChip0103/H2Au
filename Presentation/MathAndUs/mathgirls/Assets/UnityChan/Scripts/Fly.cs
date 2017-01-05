@@ -4,49 +4,30 @@ using UnityEngine;
 
 public class Fly : MonoBehaviour {
 
-	float height = 0.5f, speed = 0.01f;
-	int sw = 0, cnt = 0, cnt_limit = 60;
-	int i;
+	public float height, speed;
 
-	Vector3 move_vector_up = new Vector3 (0.0f, 1f, 0.0f);
-	Vector3 move_vector_down = new Vector3 (0.0f, -1f, 0.0f);
-	Vector3 move_vector_location = new Vector3 (0.7f, 0.0f, 0.0f);
+	private float vertical_start, horizontal_start;
+	private int direction = 1, cnt = 0, cnt_limit = 50;
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine ("UnityFly");
+		cnt_limit = (int)(cnt_limit / speed);
 
+		vertical_start = this.transform.position.y;
+		horizontal_start = this.transform.position.x;
 	}
 
-	// Update is called once per frame
-	void Update () {
-
-	}
-
-	IEnumerator UnityFly(){
-		if (sw == 0) {
-			transform.position = move_vector_up * height * speed * cnt;
-			transform.position += move_vector_location;
-			if (cnt >= cnt_limit - 2) {
-				sw = 1;
-				cnt = 0;
-			} else {
-				cnt+=2;
-			}
-		} else {
-			transform.position = move_vector_down * height * speed * cnt;
-			transform.position += move_vector_up * cnt_limit * height * speed;
-			transform.position += move_vector_location;
-			if (cnt >= cnt_limit - 2) {
-				sw = 0;
-				cnt = 0;
-			} else {
-				cnt+=2;
-			}
+	void FixedUpdate() {
+		transform.position = Vector3.up * direction * height * cnt / (cnt_limit - 1);
+		transform.position += Vector3.up * vertical_start + Vector3.right * horizontal_start;
+		if (direction == -1) {
+			transform.position += Vector3.up * height;
 		}
-
-		yield return new WaitForSeconds(0.01f);
-
-		StartCoroutine ("UnityFly");
+		if (cnt >= cnt_limit - 1) {
+			direction = -direction;
+			cnt = 0;
+		} else {
+			cnt++;
+		}
 	}
 }

@@ -81,7 +81,7 @@ namespace CameraController
 		{
 			float delta = Input.GetAxis("Mouse ScrollWheel");
 			if (delta != 0.0f)
-				this.mouseWheelEvent(delta);
+				this.mouseWheelEvent(-delta);
 
 			if (Input.GetMouseButtonDown((int)MouseButtonDown.MBD_LEFT) ||
 				Input.GetMouseButtonDown((int)MouseButtonDown.MBD_MIDDLE) ||
