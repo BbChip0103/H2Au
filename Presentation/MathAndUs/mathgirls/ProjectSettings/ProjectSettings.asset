@@ -10,8 +10,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: EG Factory
-  productName: "\uAC00\uB974\uCCD0\uC918! \uCF54\uB529 \uC18C\uB140"
+  companyName: "\uACE0\uC591\uC774"
+  productName: "\uAC00\uB974\uCCD0\uC918! \uC218\uD559 \uC18C\uB140"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}

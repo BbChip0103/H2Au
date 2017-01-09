@@ -1,0 +1,7 @@
+﻿  Pretest_1_1.c
+c:\users\01\github\h2au\presentation\mathandus\pretest_1_1(math)\pretest_1_1\pretest_1_1.c(52): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 'scanf' 선언을 참조하십시오.
+c:\users\01\github\h2au\presentation\mathandus\pretest_1_1(math)\pretest_1_1\pretest_1_1.c(71): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+  Pretest_1_1.vcxproj -> C:\Users\01\Github\H2Au\Presentation\MathAndUs\Pretest_1_1(math)\Debug\Pretest_1_1.exe
+  Pretest_1_1.vcxproj -> C:\Users\01\Github\H2Au\Presentation\MathAndUs\Pretest_1_1(math)\Debug\Pretest_1_1.pdb (Full PDB)

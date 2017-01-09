@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <Windows.h>
 #include <math.h>
 
 #define PI 3.14159265358979323846
@@ -12,8 +11,11 @@
 int Pretest1_2();
 int GetArraySize();
 void ResizeWindow(int _array_size);
-void PrintSpiral(int _array_size);
-void MoveXY(int _x, int _y);
+char** NewArray(int _array_size);
+void FreeArray(char ** _spiral_array, int _array_size);
+void InitializeArray(char ** _spiral_array, int _array_size);
+void MakeSpiral(char ** _spiral_array, int _array_size);
+void PrintSpiral(char ** _spiral_array, int _array_size);
 
 void main() {
 
@@ -22,13 +24,22 @@ void main() {
 }
 
 int Pretest1_2() {
+	char ** spiral_array;
 	int array_size;
 
 	array_size = GetArraySize();
 
 	ResizeWindow(array_size);
 
-	PrintSpiral(array_size);
+	spiral_array = NewArray(array_size);
+
+	InitializeArray(spiral_array, array_size);
+
+	MakeSpiral(spiral_array, array_size);
+
+	PrintSpiral(spiral_array, array_size);
+
+	FreeArray(spiral_array, array_size);
 
 	return 0;
 }
@@ -36,15 +47,13 @@ int Pretest1_2() {
 int GetArraySize() {
 	int array_size;
 
-	while (TRUE) {
+	while (1) {
 		printf("배열의 크기를 입력해주세요 : ");
 		scanf("%d", &array_size);
 		while (getchar() != '\n');	//	flush input buffer
 
-		if (array_size < 1)
-			printf("1 이상의 자연수만 입력해주세요.\n\n");
-		else 
-			break;
+		if (array_size < 1)	printf("1 이상의 자연수만 입력해주세요.\n\n");
+		else break;
 	}
 	
 	return array_size;
@@ -54,40 +63,73 @@ void ResizeWindow(int _array_size) {
 	char temp[40];
 
 	if (_array_size < 14) {	// 이거 이하로는 콘솔창이 안 줄어들던;;
-		system("mode con:cols=14 lines=14");
+		system("mode con:cols=15 lines=14");
 		
 		return;
 	}
 
-	sprintf(temp, "mode con:cols=%d lines=%d", _array_size, (_array_size / VERTICAL_SCALE) + 1);
+	sprintf(temp, "mode con:cols=%d lines=%d", 
+		    _array_size + 1, (_array_size / VERTICAL_SCALE));	// 반올림 때문에 X 사이즈 +1 해줌
 	system(temp);
 }
 
-void PrintSpiral(int _array_size) {
+char** NewArray(int _array_size) {
+	unsigned char** array;
+	int i;
+
+	array = (char **)malloc(sizeof(char*) * _array_size / VERTICAL_SCALE);
+
+	for (i = 0; i < (_array_size / VERTICAL_SCALE); i++)
+		array[i] = (char*)malloc(sizeof(char*) * _array_size);
+
+	return array;
+}
+
+void FreeArray(char ** _array, int _array_size) {
+	int i;
+
+	for (i = 0; i < (_array_size / VERTICAL_SCALE); i++)
+		free(_array[i]);
+	free(_array);
+}
+
+void InitializeArray(char ** _spiral_array, int _array_size) {
+	int i, j;
+
+	for (i = 0; i < _array_size / VERTICAL_SCALE; i++)
+		for (j = 0; j < _array_size ; j++)
+			_spiral_array[i][j] = ' ';
+}
+
+void MakeSpiral(char ** _spiral_array, int _array_size) {
 	int radius, rotation_count, angle;
+	int x, y;
 	int i;
 
 	radius = _array_size / 2;	// 반지름 계산
 	rotation_count = radius / 5;	// 몇 바퀴 돌릴지, 뒤에 나누는 숫자를 높게 할 수록 간격이 여유로워짐
 	angle = 360 * rotation_count;	// 각도 계산
 
+	// 반올림 할 경우가 중앙의 디테일이 좀 더 살음 +0.5하고 내림하는식으로 구현
 	for (i = 0; i < angle; i++) {
-		// 반올림 할 경우가 중앙의 디테일이 좀 더 살음 +0.5하고 내림하는식으로 구현
-		MoveXY((int)floor((COS(i) * radius * i / angle) + (radius - 1) + 0.5), 
-				 (int)floor((SIN(i) * radius * i / (angle * VERTICAL_SCALE)) + (radius / VERTICAL_SCALE) + 1.5));
+		x = (int)floor((COS(i) * radius * i / angle) + (radius - 1) + 0.5);
+		y = (int)floor(((SIN(i) * radius * i / angle) + radius + 1) / VERTICAL_SCALE + 0.5);
 
-		//MoveXY((int)(COS(i) * radius * i / angle) + (radius - 1),
-		//	(int)(SIN(i) * radius * i / (angle * VERTICAL_SCALE)) + (radius / VERTICAL_SCALE) + 1);
+		//요게 반올림 안한거
+		//x = (int)(COS(i) * radius * i / angle) + (radius - 1);
+		//y = (int)(((SIN(i) * radius * i / angle) + radius + 1) / VERTICAL_SCALE);
 
-		printf("*");
+		_spiral_array[y][x] = '*';
 	}
-
-	MoveXY(0, 2 * radius / VERTICAL_SCALE);	// 나선형 모양 깨지니까 커서를 맨 밑으로 내림
 }
 
-void MoveXY(int _x, int _y) {
-	COORD cur;
-	cur.X = _x;
-	cur.Y = _y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
+void PrintSpiral(char ** _spiral_array, int _array_size) {
+	int i, j;
+
+	for (i = 0; i < _array_size / VERTICAL_SCALE; i++) {
+		for (j = 0; j < _array_size; j++) {
+			printf("%c", _spiral_array[i][j]);
+		}
+		printf("\n");
+	}
 }
