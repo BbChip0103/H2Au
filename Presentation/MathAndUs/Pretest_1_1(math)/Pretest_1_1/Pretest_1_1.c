@@ -5,8 +5,7 @@
 #define PI 3.14159265358979323846
 #define COS(angle) cos(PI * angle / 180)
 #define SIN(angle) sin(PI * angle / 180)
-#define VERTICAL_SCALE 1	// 콘솔창에서 가로세로 크기가 달라서, 2로 하면 세로크기를 1/2로 줄여줌
-
+#define VERTICAL_SCALE 2	// 콘솔창에서 가로세로 크기가 달라서, 2로 하면 세로크기를 1/2로 줄여줌
 
 int Pretest1_2();
 int GetArraySize();
@@ -102,12 +101,14 @@ void InitializeArray(char ** _spiral_array, int _array_size) {
 }
 
 void MakeSpiral(char ** _spiral_array, int _array_size) {
-	int radius, rotation_count, angle;
+
+	double rotation_count;
+	int radius, angle;
 	int x, y;
 	int i;
 
 	radius = _array_size / 2;	// 반지름 계산
-	rotation_count = radius / 5;	// 몇 바퀴 돌릴지, 뒤에 나누는 숫자를 높게 할 수록 간격이 여유로워짐
+	rotation_count = radius / 5;	// 몇 바퀴 돌릴지 계산, 뒤에 나누는 숫자는 선과 선 사이의 간격
 	angle = 360 * rotation_count;	// 각도 계산
 
 	// 반올림 할 경우가 중앙의 디테일이 좀 더 살음 +0.5하고 내림하는식으로 구현
