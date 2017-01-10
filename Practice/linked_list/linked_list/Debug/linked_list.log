@@ -1,0 +1,40 @@
+﻿  TDD.cpp
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(5): error C2248: 'List<int>::List': private 멤버('List<int>' 클래스에서 선언)에 액세스할 수 없습니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\linked_list.h(71): note: 'List<int>::List' 선언을 참조하십시오.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(5): note: 'List<int>' 선언을 참조하십시오.
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(7): error C2228: '.Add' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(7): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(7): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(8): error C2228: '.GetData' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(8): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(8): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(9): error C2228: '.GetSize' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(9): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(9): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(11): error C2228: '.Add' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(11): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(11): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(12): error C2228: '.GetData' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(12): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(12): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(13): error C2228: '.GetSize' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(13): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(13): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(15): error C2228: '.Remove' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(15): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(15): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(16): error C2228: '.GetData' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(16): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(16): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(17): error C2228: '.GetSize' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(17): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(17): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(19): error C2228: '.Remove' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(19): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(19): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(20): error C2228: '.GetData' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(20): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(20): note: 대신 '->'을(를) 사용하려고 했습니까?
+c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(21): error C2228: '.GetSize' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(21): note: 'List<int> *' 형식입니다.
+  c:\users\01\documents\visual studio 2015\projects\linked_list\linked_list\tdd.cpp(21): note: 대신 '->'을(를) 사용하려고 했습니까?
