@@ -1,2 +1,13 @@
-﻿  Pretest2_1.vcxproj -> C:\Users\cho\Desktop\H2Au\Pretest2_1(연결리스트)\Debug\Pretest2_1.exe
-  Pretest2_1.vcxproj -> C:\Users\cho\Desktop\H2Au\Pretest2_1(연결리스트)\Debug\Pretest2_1.pdb (Full PDB)
+﻿  Pretest2_1.c
+c:\users\01\github\h2au\h2au_homework\solutions\pretest2_1(연결리스트)\pretest2_1\pretest2_1.c(77): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
+c:\users\01\github\h2au\h2au_homework\solutions\pretest2_1(연결리스트)\pretest2_1\pretest2_1.c(103): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note: 'fscanf' 선언을 참조하십시오.
+c:\users\01\github\h2au\h2au_homework\solutions\pretest2_1(연결리스트)\pretest2_1\pretest2_1.c(134): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note: 'fscanf' 선언을 참조하십시오.
+c:\users\01\github\h2au\h2au_homework\solutions\pretest2_1(연결리스트)\pretest2_1\pretest2_1.c(161): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note: 'fscanf' 선언을 참조하십시오.
+  DLinkedList.c
+  코드를 생성하고 있습니다...
+  Pretest2_1.vcxproj -> C:\Users\01\Github\H2Au\H2Au_homework\Solutions\Pretest2_1(연결리스트)\Debug\Pretest2_1.exe
+  Pretest2_1.vcxproj -> C:\Users\01\Github\H2Au\H2Au_homework\Solutions\Pretest2_1(연결리스트)\Debug\Pretest2_1.pdb (Full PDB)
